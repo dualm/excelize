@@ -298,9 +298,11 @@ func checkSheet(ws *xlsxWorksheet) {
 		}
 		row++
 		r.R = row
-		sheetData.Row[row-1] = r
+		if len(sheetData.Row) > row-1 {
+			sheetData.Row[row-1] = r
+		}
 	}
-	for i := 1; i <= row; i++ {
+	for i := 1; i <= row && (i-1) < len(sheetData.Row); i++ {
 		sheetData.Row[i-1].R = i
 	}
 	checkSheetR0(ws, &sheetData, &r0)
