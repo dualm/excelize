@@ -16,3 +16,5 @@ require (
 	golang.org/x/text v0.3.7
 	gopkg.in/yaml.v3 v3.0.0 // indirect
 )
+
+replace github.com/xuri/excelize/v2 v2.6.0 => github.com/dualm/excelize/v2 v2.6.1
